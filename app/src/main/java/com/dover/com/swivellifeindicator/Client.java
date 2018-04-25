@@ -44,7 +44,7 @@ public class Client extends AsyncTask<Void, Void, Integer> {
 
         Socket socket = null;
 
-        /*try {
+        try {
             socket = new Socket(dstAddress, dstPort);
             byte ch = '1';
 
@@ -93,16 +93,16 @@ public class Client extends AsyncTask<Void, Void, Integer> {
                     e.printStackTrace();
                 }
             }
-        }*/
+        }
 
-        // while loop for testing without socket, replace return value with 'i'
+       /* // while loop for testing without socket, replace return value with 'i'
         while (i < 20) {
             i++;
             Log.d("", "value of i" + i);
             publishProgress(null);
 
-        }
-        return i;
+        }*/
+        return value;
     }
 
     //@Override
@@ -120,7 +120,7 @@ public class Client extends AsyncTask<Void, Void, Integer> {
         // If testing needs to be done without socket then replace value with 'i present in while loop'
         Log.d("onProgressUpdate", "count values  :" + value);
         textResponse.append(" Count " + value + "\n");
-        callNotification(800);
+        callNotification(value);
     }
 
     private void callNotification(int i) {
