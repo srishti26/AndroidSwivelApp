@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "324351062327",
+    "firebase_url": "https://composed-sensor-128614.firebaseio.com",
+    "project_id": "composed-sensor-128614"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324351062327:android:a53c10b7a0e6c93f",
+        "android_client_info": {
+          "package_name": "com.dover.com.swivellifeindicator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324351062327-9kgfrepnqlh9sthpad3q6l2v9kbbnrtq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dover.com.swivellifeindicator",
+            "certificate_hash": "a9a7f5195111e17460c4c651a12d436d8378541b"
+          }
+        },
+        {
+          "client_id": "324351062327-bvm8nifejjb0oe7f006fnikl7ch0mc7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdu59l8od4WodBFUHrp4APopTzyjdDhiI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324351062327-bvm8nifejjb0oe7f006fnikl7ch0mc7l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
