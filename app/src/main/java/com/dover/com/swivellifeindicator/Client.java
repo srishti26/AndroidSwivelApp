@@ -44,7 +44,7 @@ public class Client extends AsyncTask<Void, Void, Integer> {
 
         Socket socket = null;
 
-        try {
+        /*try {
             socket = new Socket(dstAddress, dstPort);
             byte ch = '1';
 
@@ -93,16 +93,16 @@ public class Client extends AsyncTask<Void, Void, Integer> {
                     e.printStackTrace();
                 }
             }
-        }
+        }*/
 
-        /* while loop for testing without socket, replace return value with 'i'
-        while (i<20){
+        // while loop for testing without socket, replace return value with 'i'
+        while (i < 20) {
             i++;
-            Log.d("","value of i"+i);
+            Log.d("", "value of i" + i);
             publishProgress(null);
 
-        }*/
-        return value;
+        }
+        return i;
     }
 
     //@Override
@@ -119,25 +119,23 @@ public class Client extends AsyncTask<Void, Void, Integer> {
         textResponse.setText("");
         // If testing needs to be done without socket then replace value with 'i present in while loop'
         Log.d("onProgressUpdate", "count values  :" + value);
-        textResponse.append( " Count " + value + "\n");
-        if (value == 800 || value == 900) {
-            callNotification(value);
-        }
+        textResponse.append(" Count " + value + "\n");
+        callNotification(800);
     }
 
     private void callNotification(int i) {
         float percentage = i;
         percentage = (100 - (percentage / 1000) * 100);
+        if (Float.compare(percentage, 20) == 0 || Float.compare(percentage, 10) == 0 || Float.compare(percentage, 5) == 0 || Float.compare(percentage, 3) == 0 || Float.compare(percentage, 1) == 0 ) {
+            notif = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notify = new Notification.Builder
+                    (context).setContentText("Swivel life remaining: " + percentage + "%").
+                    setContentTitle("SwivelLifeIndicator").setSmallIcon(R.drawable.pic).build();
 
-        notif = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notify = new Notification.Builder
-                (context).setContentText("Swivel life remaining: " + percentage + "%").
-                setContentTitle("SwivelLifeIndicator").setSmallIcon(R.drawable.pic).build();
-
-        notify.flags |= Notification.FLAG_AUTO_CANCEL;
-        notif.notify(0, notify);
+            notify.flags |= Notification.FLAG_AUTO_CANCEL;
+            notif.notify(0, notify);
+        }
     }
-
 
 }
 
